@@ -22,15 +22,136 @@
 }
 
 .new-header .sec-2{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
     width: 100%;
-    height: 70px;
+    height: 60px;
     background-color: white;
     box-shadow: 0px 2px 6px 0px rgba(93, 90, 90, 0.142);
     padding-left: 30px;
     padding-right: 30px;
 
+
 }
 
+.new-header .sec-2 .new-nav{
+    font-size: 16px;
+    text-rendering:optimizeSpeed;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    font-family: Roboto;
+    gap:30px;
+
+
+}
+
+.new-header .sec-2 .new-nav{
+    height: 100%;
+}
+
+.nav-categories{
+    display: flex;
+    align-items: center;
+    margin-left: 10px;
+    position: relative;
+    height: 100%;
+
+}
+
+.nav-categories .roww-1{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin: 0px;
+}
+
+.nav-categories .row-2{
+    position: absolute;
+    background-color: white;
+    width: 1300px;
+    top:59.6px;
+    left: -40px;
+    z-index: 30;
+    box-shadow: 0px 2px 6px 0px rgba(93, 90, 90, 0.353);
+    transform: translateY(14px);
+    opacity: 0;
+    transition: all 200ms;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 30px;
+}
+
+.nav-categories .row-2 .category{
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    font-family: Outfit;
+    color: black;
+    gap:20px;
+    font-weight: 100;
+
+}
+
+.nav-categories .row-2 .category .category-item{
+    width: fit-content;
+    cursor: pointer;
+    transition: all 300ms;
+}
+
+.new-nav-item{
+    transition: all 250ms;
+    cursor: pointer;
+}
+.new-nav-item:hover
+{
+    color:#3d52d7
+}
+
+.nav-categories .row-2 .category .category-item:hover{
+    color: #3e52d5;
+}
+
+
+
+.nav-categories .row-2 .category .types{
+    display: flex;
+    flex-direction: column;
+    gap:10px;
+}
+
+.nav-categories .row-2 .category .first-category{
+    font-weight: bold;
+}
+
+.nav-categories .drop-down-animate{
+    opacity: 1;
+    transform: unset;
+}
+
+.nav-categories .drop-up-animate{
+    opacity: 0;
+    transform: translateY(14px);
+}
+
+
+
+
+
+.new-header .dash-input{
+    width: 400px;
+    background-color: whitesmoke;
+    padding-left: 60px;
+    font-family: Outfit;
+    font-size: 15px;
+
+}
+
+.new-header .dash-search-icon{
+    width: 50px;
+}
 
 .new-header .points{
     display: flex;
