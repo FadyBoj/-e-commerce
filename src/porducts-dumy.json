@@ -1,0 +1,64 @@
+[{
+    "id":1,
+    "price":200,
+    "title":"Tomatos",
+    "deal":20,
+    "favorite":false
+},
+{
+    "id":2,
+    "price":69,
+    "title":"Tomatos",
+    "deal":90,
+    "favorite":false
+},
+{
+    "id":3,
+    "price":69,
+    "title":"Tomatos",
+    "deal":90,
+    "favorite":false
+},
+{
+    "id":4,
+    "price":69,
+    "title":"Tomatos",
+    "deal":90,
+    "favorite":false
+},
+{
+    "id":5,
+    "price":69,
+    "title":"Tomatos",
+    "deal":90,
+    "favorite":false
+},
+{
+    "id":6,
+    "price":69,
+    "title":"Tomatos",
+    "deal":90,
+    "favorite":false
+},
+{
+    "id":6,
+    "price":69,
+    "title":"Tomatos",
+    "deal":90,
+    "favorite":false
+},
+{
+    "id":6,
+    "price":69,
+    "title":"Tomatos",
+    "deal":90,
+    "favorite":false
+},
+{
+    "id":6,
+    "price":69,
+    "title":"Tomatos",
+    "deal":90,
+    "favorite":false
+}
+]

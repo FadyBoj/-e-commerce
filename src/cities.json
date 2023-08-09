@@ -1,0 +1,290 @@
+[
+    {
+      "name": "Alexandria",
+      "cities": [
+        "Alexandria",
+        "Borg El Arab",
+        "Abu Qir",
+        "El Agami",
+        "El Max",
+        "Ras El Tin"
+      ]
+    },
+    {
+      "name": "Aswan",
+      "cities": [
+        "Aswan",
+        "Edfu",
+        "Kom Ombo",
+        "Abu Simbel",
+        "Daraw",
+        "Kalabsha"
+      ]
+    },
+    {
+      "name": "Asyut",
+      "cities": [
+        "Asyut",
+        "Abnub",
+        "Sahel Selim",
+        "Dairout",
+        "Manfalut",
+        "New Asyut City"
+      ]
+    },
+    {
+      "name": "Beheira",
+      "cities": [
+        "Damanhur",
+        "Rashid",
+        "Edko",
+        "Abu Al Matamir",
+        "El Delengat",
+        "Kafr El Dawwar"
+      ]
+    },
+    {
+      "name": "Beni Suef",
+      "cities": [
+        "Beni Suef",
+        "Nasser",
+        "El Fashn",
+        "Biba",
+        "Al Wasta",
+        "Samasta"
+      ]
+    },
+    {
+      "name": "Cairo",
+      "cities": [
+        "Cairo",
+        "Giza",
+        "Shubra Al-Kheima",
+        "Heliopolis",
+        "Nasr City",
+        "Maadi",
+        "Ain Shams"
+
+      ]
+    },
+    {
+      "name": "Dakahlia",
+      "cities": [
+        "Mansoura",
+        "Talkha",
+        "Aga",
+        "El Matareya",
+        "Dikirnis",
+        "Mit Ghamr"
+      ]
+    },
+    {
+      "name": "Damietta",
+      "cities": [
+        "Damietta",
+        "Kafr Saad",
+        "Faraskur",
+        "El Zarqa",
+        "Ras El Bar",
+        "New Damietta City"
+      ]
+    },
+    {
+      "name": "Faiyum",
+      "cities": [
+        "Faiyum",
+        "Ibsheway",
+        "Tamiya",
+        "Sinnuris",
+        "Abshway",
+        "Shibin El Kom"
+      ]
+    },
+    {
+      "name": "Gharbia",
+      "cities": [
+        "Tanta",
+        "Zefta",
+        "Kafr El Zayat",
+        "Samanoud",
+        "El Mahalla El Kubra",
+        "Basyoun"
+      ]
+    },
+    {
+      "name": "Giza",
+      "cities": [
+        "Giza",
+        "6th of October City",
+        "Sheikh Zayed City",
+        "Al Haram",
+        "Imbaba",
+        "Mohandessin"
+      ]
+    },
+    {
+      "name": "Ismailia",
+      "cities": [
+        "Ismailia",
+        "Fayed",
+        "Qantara Sharq",
+        "Al Tal Al Kabir",
+        "Abu Sultan",
+        "El Qantara"
+      ]
+    },
+    {
+      "name": "Kafr El Sheikh",
+      "cities": [
+        "Kafr El Sheikh",
+        "Desouk",
+        "Baltim",
+        "Metobas",
+        "El Hamool",
+        "Fouh"
+      ]
+    },
+    {
+      "name": "Luxor",
+      "cities": [
+        "Luxor",
+        "Karnak",
+        "Esna",
+        "Armant",
+        "El Tod",
+        "Qurna"
+      ]
+    },
+    {
+      "name": "Matruh",
+      "cities": [
+        "Marsa Matruh",
+        "El Hamam",
+        "Siwa",
+        "Sidi Barrani",
+        "El Alamein",
+        "Alamein"
+      ]
+    },
+    {
+      "name": "Minya",
+      "cities": [
+        "Minya",
+        "Maghagha",
+        "Samalut",
+        "Bani Mazar",
+        "Mallawi",
+        "Deir Mawas"
+      ]
+    },
+    {
+      "name": "Monufia",
+      "cities": [
+        "Shebin El Kom",
+        "Sadat",
+        "Ashmoun",
+        "Berket El Sabaa",
+        "El Bagour",
+        "Tala"
+      ]
+    },
+    {
+      "name": "New Valley",
+      "cities": [
+        "Kharga",
+        "Dakhla",
+        "Farafra",
+        "Balat",
+        "Mut",
+        "Baris"
+      ]
+    },
+    {
+      "name": "North Sinai",
+      "cities": [
+        "Arish",
+        "Rafah",
+        "Sheikh Zuweid",
+        "Bir Al Abd",
+        "Nakhl",
+        "Al Hasana"
+      ]
+    },
+    {
+      "name": "Port Said",
+      "cities": [
+        "Port Said",
+        "Port Fuad",
+        "El Arish",
+        "El Manzala",
+        "El Sidy El Rezq",
+        "El Qantara Sharq"
+      ]
+    },
+    {
+      "name": "Qalyubia",
+      "cities": [
+        "Banha",
+        "Qaha",
+        "Shubra Al Khaymah",
+        "El Qanater El Khayreya",
+        "Khusus",
+        "Tukh"
+      ]
+    },
+    {
+      "name": "Qena",
+      "cities": [
+        "Qena",
+        "Dendera",
+        "Naqada",
+        "Qift",
+        "El Waqf",
+        "Nag Hammadi"
+      ]
+    },
+    {
+      "name": "Red Sea",
+      "cities": [
+        "Hurghada",
+        "Marsa Alam",
+        "Safaga",
+        "El Qoseir",
+        "Ras Gharib",
+        "Shalateen"
+      ]
+    },
+    {
+      "name": "Sharqia",
+      "cities": [
+        "Zagazig",
+        "Faqous",
+        "Abu Hammad",
+        "Husseiniya",
+        "Abu Kabir",
+        "El Salheya El Gedida"
+      ]
+    },
+    {
+      "name": "Sohag",
+      "cities": [
+        "Sohag",
+        "Akhmim",
+        "Gerga",
+        "Tama",
+        "El Maragha",
+        "Tahta"
+      ]
+    },
+    {
+      "name": "South Sinai",
+      "cities": [
+        "Sharm El Sheikh",
+        "Dahab",
+        "Nuweiba",
+        "Saint Catherine",
+        "Ras Sedr",
+        "Taba"
+      ]
+    }
+  ]

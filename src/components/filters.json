@@ -1,0 +1,39 @@
+[
+    {
+        "name":"Legums",
+        "width":"0%",
+        "id":1
+    },
+    {
+        "name":"Sauces",
+        "width":"0%",
+        "id":2
+    },
+    {
+        "name":"Fishes",
+        "width":"0%",
+        "id":3
+    },
+    {
+        "name":"Canned food",
+        "width":"0%",
+        "id":4
+    },
+    {
+        "name":"Cleaning products",
+        "width":"0%",
+        "id":5
+    },
+    {
+        "name":"Sweets",
+        "width":"0%",
+        "id":6
+    },
+    {
+        "name":"Drinks",
+        "width":"0%",
+        "id":7
+    }
+    
+    
+]

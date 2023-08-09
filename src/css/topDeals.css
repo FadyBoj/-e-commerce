@@ -1,0 +1,288 @@
+.top--deals--section{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap:0px;
+    padding-top: 20px;
+}
+
+.top--deals--section h1{
+    font-family: Outfit;
+    background-color: #ecf0f6;
+    color: #1d4ca1;
+    width: 100%;
+    text-align: center;
+    padding-top: 20px;
+}
+
+
+
+.top--deals{
+    width: 100%;
+    height: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap:10px;
+    margin-top: 0px;
+    padding-top: 50px;
+    padding-bottom: 50px;
+    background-color: #ecf0f6;
+
+}
+
+.top--deals--products{
+    display: flex;
+    flex-direction: row;
+    overflow: scroll;
+    overflow-y: hidden;
+    gap:10px;
+    padding: 10px;
+    scroll-behavior: smooth;
+    
+}
+
+.top--deals--section .arrow {
+    cursor: pointer;
+    background-color: white;
+    border-radius: 50%;
+    padding:5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: all 250ms;
+}
+
+.top--deals--section .arrow:hover{
+    filter: brightness(80%);
+}
+
+.top--deals--products::-webkit-scrollbar {
+    display: none;
+}
+
+.scroll-transition{
+    transition: all 0.5s ease-in-out;  
+}
+
+.top--product{
+    display: flex;
+    position: relative;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 200px;
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0px 1px 7px 0px rgba(198, 198, 202, 0.75);
+    padding-bottom: 35px;
+
+}
+
+.top--image{
+    border-radius: 8px;
+    width: 200px;
+    margin-top:30px;}
+
+.off{
+    position: absolute;
+    background-color:#e22319 ;
+    padding: 10px;
+    border-radius: 8px;
+    font-family: Outfit;
+    color:white;
+    left:7px;
+    top:12px;
+    width: 80px;
+    height: 35px;
+    font-size: 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.heart{
+    font-size: 40px;
+}
+
+.heart--container{
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    right: 10px;
+    top:16px;
+    cursor: pointer;
+    
+}
+
+.hear--icon{
+    font-size: 200px;
+}
+
+.top--deals--section .title{
+    font-family: Outfit;
+    font-weight: 700;
+
+}
+
+.top--deal--price{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap:20px;
+    font-family:"Ubuntu",sans-serif;;
+    font-weight: 700;
+    justify-content: center;
+    color: #1d4ca1;
+}
+
+.top--deal--price span{
+    font-size: 14px;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+
+.top--product .original--price {
+    text-decoration: line-through;
+    color: rgb(147, 144, 144);
+    font-family: sans-serif;
+    font-weight: unset;
+    font-size: 13px;
+}
+
+.top--product .original--price span{
+    font-family: sans-serif;
+    font-size: 11px;    
+}
+
+
+
+ .top--deals--section .cart--container
+ {
+    position: absolute;
+    bottom: -8px;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    background:linear-gradient(#1d4ca1,#1958cc);
+ }
+
+@media (max-width:3002px){
+    .top--deals--products{
+        width: 1157px;
+    }
+}
+
+@media screen and (max-width:2000px) {
+    .top--deals--products{
+        width: 1157px;
+    }
+}
+
+@media(max-width:1590px)
+{
+    .top--deals--products{
+        width: 1274px;
+    }
+    @media(max-width:1485px)
+    {
+        .top--deals--products{
+            width: 1055px;
+        }
+        @media(max-width:1256px)
+    {
+        .top--deals--products{
+            width: 845px;
+        }
+    }
+    }
+
+    @media (max-width:1024px) {
+        .top--deals--section .cart--container{
+            width: 30px;
+            height: 30px;
+            padding-top: 8px;
+            padding-bottom: 8px;
+            padding-left: 8px;
+            padding-right: 8px;
+        }
+        .top--deals{
+            padding-left: 0px;
+            padding-right: 0px;
+        }
+        .top--deals--products{
+            width: 764px;
+            gap:20px;
+        }
+        .top--image{
+            width: 170px;
+        }
+        .top--product{
+            padding-top: 20px;
+        }
+        .off{
+            top:8px
+        }
+        .heart--container{
+            top:14px;
+        }
+        @media (max-width:925px)
+        {
+            .top--deals--products{
+                width: 575px;
+            }
+
+            @media(max-width:733px)
+            {
+                .top--deals--products{
+                    width: 383px;
+                }
+                @media (max-width:542px) {
+                    .top--deals--products{
+                        width: 380px;
+                    }
+                    @media (max-width:485px)
+                    {
+                       
+                        .top--deals--products{
+                            width: 276.8px;
+                            padding-left: 7px;
+                        }
+                        .top--product{
+                            width: 160px;
+                            height: 300px;
+                            font-size: 10px;
+                        }
+                        .top--product  .price{
+                            font-size: 12px;
+                        }
+                        .top--product .top--deal--price span{
+                            font-size: 9px;
+                        }
+                        .top--deal--price .original--price{
+                            font-size: 10px;
+                        }
+                        .top--image{
+                            width: 120px;
+                        }
+                        .off{
+                            width: 50px;
+                            font-size: 9px;
+                            height: 30px;
+                            top:12px
+                        }
+                    }
+                }
+            }
+
+        }
+    }
+
+}

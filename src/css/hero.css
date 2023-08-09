@@ -1,0 +1,142 @@
+.slide-container{
+    margin-top: 20px;
+}
+
+.slider--image{
+    height: 350px;
+}
+
+.hero .hero-img{
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.hero .content .hero-img .text
+{
+    display: flex;
+    flex-direction: column;
+    gap:10px;
+    position: absolute;
+    left: 40px;
+}
+
+.hero .content .hero-img .text .title{
+    color: #091c89;
+    font-family:Outfit;
+    font-size: 20px;
+    opacity: 0;
+    transform: translateY(30px);
+    transition: all 1s;
+
+}
+
+.hero .content .hero-img .text .main{
+    color: black;       
+    font-family:Outfit;
+    font-size: 60px;
+    width: 500px;
+    opacity: 0;
+    transform: translateY(100px);
+    transition: all 1s;
+
+}
+
+.shop-now{
+    width: 160px;
+    height: 43px;
+    border: unset;
+    color: white;
+    background-color: #3e52d5;
+    border-radius: 3px;
+    font-family: Outfit;
+    font-size: 17px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 30px;
+    transition: all 250ms;
+    cursor: pointer;
+    border  : solid #3e52d5 3px;
+    opacity: 0;
+    transform: translateY(60px);
+    transition: all 1s;
+
+
+}
+
+.shop-now:hover{
+    background-color: #dfd8d8;
+    color: #3e52d5;
+    
+}
+
+.hero-img{
+    width: 100%;
+}
+
+
+@media (max-width:815px)
+{
+    .hero .content{
+        flex-direction: column-reverse;
+        align-items: center;
+    }
+    .hero .gallery .guy{
+        display: block;
+    }
+    .hero .gallery--pic{
+        display: none;
+    }
+    .hero .content .col-2{
+        width: 100%;
+    }
+}
+
+@media  (max-width:1400px) {
+    .slider--image{
+        height: 300px;
+    }
+
+    @media (max-width:1175px) {
+        .slider--image{
+            height: 270px;
+        }
+    }
+    
+    @media (max-width:1175px) {
+        .slider--image{
+            height: 240px;
+        }
+    }
+    @media (max-width:921px) {
+        .slider--image{
+            height: 210px;
+        }
+    }
+    @media (max-width:811px) {
+        .slider--image{
+            height: 180px;
+        }
+    }
+    @media (max-width:671px) {
+        .slider--image{
+            height: 150px;
+        }
+    }
+    @media (max-width:567px) {
+        .slider--image{
+            height: 120px;
+        }
+    }
+    @media (max-width:447px) {
+        .slider--image{
+            height: 90px;
+        }
+    }
+    @media (max-width:339px) {
+        .slider--image{
+            height: 70px;
+        }
+    }
+}
