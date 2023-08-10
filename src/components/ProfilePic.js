@@ -7,9 +7,13 @@ import { IoIosArrowDown } from 'react-icons/io';
 
 const ProfilePic = () => {
 
-
+  const [windowWidth,setWindowWidth] = React.useState(window.innerWidth);
   const [profileDropDown,setProfileDropDown] = React.useState(false);
   const dropDownRef = React.useRef();
+
+  window.addEventListener('resize',()=>{
+    setWindowWidth(window.innerWidth);
+  })
 
   const handleDropDown = ()=>{
     setProfileDropDown((prevValue)=>{
@@ -43,14 +47,18 @@ const ProfilePic = () => {
     <div ref={dropDownRef} onClick={()=>{handleDropDown()}} className='profile-pic-container'> 
                   <div className='content'>
                       <div className='pfp' style={{backgroundImage:`url(${require('../images/John-wick.jpg')})`}}></div>
-                      <div className='name'>
-                        <p>John wick</p>
-                        <p className='type'>Client</p>                  
+                      { windowWidth > 605 &&
+                      <div className='render-size'>
+                        <div className='name'>
+                          <p>John wick</p>
+                          <p className='type'>Client</p>                  
+                        </div>
+                        <div 
+                        className={`drop-down-arrow ${profileDropDown ? 'handle-drop-down':''}`}><IoIosArrowDown size={23} /></div>
                       </div>
-                      <div 
-                      className={`drop-down-arrow ${profileDropDown ? 'handle-drop-down':''}`}><IoIosArrowDown size={23} /></div>
+                      }
                       { profileDropDown &&
-                      <div className='drop-down'>
+                      <div style={windowWidth < 605 ? {left:'-80px'}:{}} className='drop-down'>
 
                         <div className='first ele'> <CgProfile size={20} /> <div>My profile</div></div>
                         <div className='ele'> <RiSettings2Line size={20} /> <div>Settings</div></div>

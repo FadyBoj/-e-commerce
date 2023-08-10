@@ -31,6 +31,12 @@ export default function Hero()
         },1500)
     },1700)
 
+
+    setTimeout(()=>{
+        title.style.transition = 'unset';
+        main.style.transition = 'unset';
+    },1800)
+
    })
 
     return(
@@ -38,15 +44,19 @@ export default function Hero()
 
             <div  className='content'>
 
-                <div className='hero-img'>
-                    <div><img alt='hero-img' draggable={false} className='hero-img' src={require('../images/HeroImg.webp')}/></div>
+                <div className='hero-img-container'>
 
-                    <div className='text'>
-                        <p className='title'>Shoperz Sale</p>
-                        <p className='main'>Let your Groceries Come to you</p>
-                        <div>
-                            <button className='shop-now'>Shop now</button>
+                    <div className='hero-img'>
+                        <div className='text'>
+                            <div>
+                            <p className='title'>Shoperz Sale</p>
+                            <p className='main'>Let your Groceries Come to you</p>
+                            </div>  
+                            <div>
+                                <button className='shop-now'>Shop now</button>
+                            </div>
                         </div>
+
                     </div>
 
                 </div>

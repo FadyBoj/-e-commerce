@@ -4,16 +4,23 @@ import React from 'react'
 //Components
 import ProfilePic from './ProfilePic';
 import Shoperz from './shoperz'
+
 //icons
 import { AiOutlineSearch } from 'react-icons/ai';
 import { AiTwotoneThunderbolt } from 'react-icons/ai';
 import { VscBell } from 'react-icons/vsc';
 import NotfiDot from './made-icons/NotfiDot';
-import { RiArrowDropDownLine } from 'react-icons/ri'
+import { RiArrowDropDownLine } from 'react-icons/ri';
+import { GiHamburgerMenu } from 'react-icons/gi';
+import { PiShoppingCartLight } from 'react-icons/pi' 
+import { IoIosHeartEmpty } from 'react-icons/io'
 
-const NewHeader = () => {
+const NewHeader = (props) => {
 
     const [notfication,setNotfication] = React.useState(true);
+
+    //Filters Setup
+
     const [animateClass,setAnimateClass] = React.useState('');
     const [delay,setDelay] = React.useState(null);
     const [exitClass,setExitClass] = React.useState('')
@@ -47,23 +54,33 @@ const NewHeader = () => {
           setDropDownVisibility(false);
         },70)
         )
-      
     }
+
+    //Filters End
+
+  //****************//
+
+    //Mobile Menu
 
   return (
     <div className='new-header'>
+
+
+      
+        <div>
+
           <div className='sec-1'>
-              <div><Shoperz width={160} height={90} /></div>
+              <div className='menu-logo'>
+                <div onClick={()=>{props.handleMenu(true)}} className='react-menu-icon'><GiHamburgerMenu color='#3d52d7' size={30} /></div>
+                <div><Shoperz width={160} height={90} /></div>
+              </div>
 
               <div className='user-content'>
 
-              <div className='points'>
-                  <div><AiTwotoneThunderbolt className='thunder-icon' size={20} fill='#7dbe54'/></div>
-                  <div>40</div>
-                </div>
+                <div className='new-headerIcon'><PiShoppingCartLight size={25} /></div>
+                <div className='new-headerIcon'><IoIosHeartEmpty size={25} /></div>
 
-              
-
+                
                 <div className='notfication'>
                   {
                     notfication ? 
@@ -74,7 +91,7 @@ const NewHeader = () => {
 
                 <ProfilePic/>
 
-        
+
               </div>
 
         </div>
@@ -82,7 +99,7 @@ const NewHeader = () => {
         <div className='sec-2'>
 
               <div className='new-nav'>
-              <div className='new-nav-item' >Home</div>
+                <div className='new-nav-item' >Home</div>
                 
                 <div  ref={dropDownRef} onMouseEnter={()=>{handleVisibility()}} onMouseLeave={()=>{handleMouseLeave()}}  className='nav-categories'>
                     <div  className='roww-1 new-nav-item'>
@@ -124,7 +141,7 @@ const NewHeader = () => {
 
                       <div className='category'>
                           <div>
-                            <div className='first-category category-item'>Fished</div>
+                            <div className='first-category category-item'>Fishes</div>
                           </div>
                           <div className='types'>
                             <div className='category-item'>Alaskan salmon</div>
@@ -171,16 +188,17 @@ const NewHeader = () => {
                     }
                   </div>
 
-                <div className='new-nav-item'>Contact Us</div>
-                <div className='new-nav-item'>About Us</div>
-                <div className='new-nav-item'>Services</div>
-              </div>
+                  <div className='new-nav-item'>Contact Us</div>
+                  <div className='new-nav-item'>About Us</div>
+                  <div className='new-nav-item'>Services</div>
+                </div>
 
-              <form className='dash-search-container'>
-              <div className='dash-search-icon' type="submit"><AiOutlineSearch size={20}/></div>
-              <div><input placeholder='Search for products' className='dash-input' type='text' /></div>
-          </form>
+              <form className='dash-search-container'>  
+                <div className='dash-search-icon' type="submit"><AiOutlineSearch size={20}/></div>
+                <div><input placeholder='Search for products' className='dash-input' type='text' /></div>
+               </form>
 
+        </div>
         </div>
     </div>
   )

@@ -3,10 +3,10 @@ import React from 'react';
 //components
 
 import NewHeader from '../components/NewHeader';
-import Header from '../components/Header';
 import Hero from '../components/Hero';
 import TopDeals from '../components/TopDeals';
 import Footer from '../components/Footer';
+import MobileMenu from '../components/MobileMenu';
 
 import '../js/app.js';
 
@@ -14,53 +14,53 @@ import '../js/app.js';
 export default function HomePage()
 {
 
-    const [mobileMenu,setMobileMenu] = React.useState(false)
+    const [mobileMenu,setMobileMenu] = React.useState(false);
+    const [animateClass,setAnimateClass] = React.useState('');
+    const mobileMenuRef = React.useRef();
 
-    console.log(mobileMenu)
 
-    const handleScroll = ()=>{
-        setMobileMenu((prevValue)=>{
-            return !prevValue
-        });
+    const handleMobileMenu = (value)=>{
+        setMobileMenu(value);
+        setTimeout(()=>{
+            setAnimateClass('mobile-menu-animate')
+        },1)
     }
 
-    const makeFalse = ()=>{
-        setMobileMenu(false)
-    }
-
-    if(mobileMenu){
-    document.body.style.overflow = "hidden";
-    window.scrollTo(0,0)
-    }
-    else{
-    document.body.style.overflow = "unset";
-    }
-
-    window.addEventListener('resize',()=>{
-        if(window.innerWidth >= 1374)
-        {
-            document.body.style.overflow = "unset";
-            makeFalse()
-
+    React.useEffect(()=>{
+        const handleClickOutSide = (event)=>{
+            try {
+                if(mobileMenu && !mobileMenuRef.current.contains(event.target))
+                {
+                    setMobileMenu(false)
+                }
+            } catch (error) {
+                
+            }
         }
-        else if(window.innerWidth < 1374 && mobileMenu)
-        {
-            document.body.style.overflow = "hidden";
 
+        document.addEventListener('click',handleClickOutSide);
+
+        return () =>{
+            document.removeEventListener('click',handleClickOutSide);
         }
+
     })
-    
-
-    
-
 
     return(
-        <div> 
-            <NewHeader/>
+        <div className={mobileMenu ? 'page-content':''}>
+
+            <MobileMenu 
+            refs={mobileMenuRef}
+            animateClass={animateClass} 
+            handleMenu={handleMobileMenu}
+            style={mobileMenu ? {transform:'unset'}:{transform:'translateX(-100%)'}}
+            />
+            <NewHeader handleMenu={handleMobileMenu} />
             <Hero />
             <TopDeals windowWidth={window.innerWidth}/><br /><br /><br />
             <Footer />
-        </div>
+
+            </div>
        
     )
 }

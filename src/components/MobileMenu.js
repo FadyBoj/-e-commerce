@@ -1,62 +1,102 @@
 import React from 'react'
 
-export default function MobileMenu(props){
-    return(
-        <div className={props.visible ? 'set--visible':''}>
-        <div className='mobile--menu--container'>
+//Icons
+import { RxCross2 } from 'react-icons/rx'
+import Shoperz from './shoperz'
 
-            <div className='main--hero'>
-                <div className='btn1'>Register</div>
-                <div className='btn2'>Login</div>
-            </div>
+import { HiOutlineHome } from 'react-icons/hi'
+import { AiOutlineShopping } from 'react-icons/ai'
+import { PiPhoneDisconnect } from 'react-icons/pi'
+import { IoIosInformationCircleOutline } from 'react-icons/io'
+import { IoIosArrowDown } from 'react-icons/io'
+import { PiShoppingCartLight } from 'react-icons/pi';
+import { IoIosHeartEmpty } from 'react-icons/io';
 
-            <div className='mobile-filters'>
 
-            <div className='filterItem'> 
-            <div>Legums</div>
-            <div className='arrow--icon'><ion-icon name="chevron-forward-outline"></ion-icon></div>
-             <div className='space'></div>
-             </div>
+const MobileMenu = (props) => {
 
-            <div className='filterItem'>  
-            <div>Sauces</div> 
-            <div className='arrow--icon'><ion-icon name="chevron-forward-outline"></ion-icon></div>
-            <div className='space'></div>
-            </div>
+    document.addEventListener('DOMContentLoaded',()=>{
+        try {
+            const categoryBtn = document.getElementById('category-btn');
+            const mobileCategories = document.getElementsByClassName('mobile-categories')[0];
+            const categoryArrow = document.getElementsByClassName('category-arrow')[0];
+            const specialCategory = document.getElementsByClassName('special-category')[0];
 
-            <div className='filterItem'> 
-            <div>Fishes</div> 
-            <div className='arrow--icon'><ion-icon name="chevron-forward-outline"></ion-icon></div>
-            <div className='space'></div>
-            </div>
+            categoryBtn.addEventListener('click',()=>{
 
-            <div className='filterItem'> 
-            <div>Canned food</div> 
-            <div className='arrow--icon'><ion-icon name="chevron-forward-outline"></ion-icon></div>
-            <div className='space'></div>
-            </div>
+                categoryArrow.classList.toggle('category-arrow-animate')
+                mobileCategories.classList.toggle('category-animate');
+                specialCategory.classList.toggle('handle-height')
+            })
 
-            <div className='filterItem'>
-            <div>Cleaning products</div>
-            <div className='arrow--icon'><ion-icon name="chevron-forward-outline"></ion-icon></div>
-            <div className='space'></div>
-            </div>
-
-            <div className='filterItem'>
-            <div>Sweets</div>
-            <div className='arrow--icon'><ion-icon name="chevron-forward-outline"></ion-icon></div>
-            <div className='space'></div>
-            </div>
+        } catch (error) {
             
-            <div className='filterItem'> 
-             <div>Drinks</div>
-             <div className='arrow--icon'><ion-icon name="chevron-forward-outline"></ion-icon></div>
-             <div className='space'></div>
-             </div>
+        }
+    })
+
+  return (
+    <div ref={props.refs} style={props.style} className='mobile-menu'>
+        
+        <div className='exit-container'>
+            <Shoperz width={150} />
+            <div onClick={()=>{props.handleMenu(false)}} className='exit-icon-cont'><RxCross2 size={30} /></div>
+        </div>
+
+
+        <div className='mobile-menu-nav'>
+
+            <div className='mobile-nav-element mobile-nav-text'>
+                <div><HiOutlineHome  size={26} /></div>
+                <div>Home</div>
+            </div>
+
+            <div className=' special-category '>
+
+                <div id='category-btn' className='mobile-category-element mobile-nav-text '>
+
+                    <div  className='mobile-category'>
+                        <div><AiOutlineShopping  size={26} /></div>
+                        <div>Categories</div>
+                    </div>
+
+                    <div className='category-arrow' ><IoIosArrowDown size={29}/></div>
+                </div>
                 
+                <div className={`mobile-categories`}>
+                    <div className='parent-category mobile-nav-text'>Legums</div>
+                    <div className='parent-category mobile-nav-text'>Sauces</div>
+                    <div className='parent-category mobile-nav-text'>Fishes</div>
+                    <div className='parent-category mobile-nav-text'>Sweets</div>
+                    <div className='parent-category mobile-nav-text last-parent'>Beverages</div>
+                </div>
+                
+
+            </div>
+
+            <div className='mobile-nav-element mobile-nav-text'>
+                <div><PiPhoneDisconnect  size={26} /></div>
+                <div>Contact Us</div>
+            </div>
+
+            <div className='mobile-nav-element mobile-nav-text'>
+                <div><IoIosInformationCircleOutline  size={26} /></div>
+                <div>About Us</div>
+            </div>
+
+            <div className='mobile-nav-element mobile-nav-text'>
+                <div><HiOutlineHome  size={26} /></div>
+                <div>Services</div>
+            </div>
+
+            <div className='mobile-menu-icons'>
+                <div className='mobile-menuIcon'><PiShoppingCartLight size={30} /></div>
+                <div className='mobile-menuIcon'><IoIosHeartEmpty size={30} /></div>
             </div>
 
         </div>
-        </div>
-    )
+
+    </div>
+  )
 }
+
+export default MobileMenu
