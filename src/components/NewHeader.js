@@ -18,6 +18,11 @@ import { IoIosHeartEmpty } from 'react-icons/io'
 const NewHeader = (props) => {
 
     const [notfication,setNotfication] = React.useState(true);
+    const [windowWidth,setWindowWidth] = React.useState(window.innerWidth);
+
+    window.addEventListener('resize',() =>{
+      setWindowWidth(window.innerWidth)
+    })
 
     //Filters Setup
 
@@ -72,7 +77,7 @@ const NewHeader = (props) => {
           <div className='sec-1'>
               <div className='menu-logo'>
                 <div onClick={()=>{props.handleMenu(true)}} className='react-menu-icon'><GiHamburgerMenu color='#3d52d7' size={30} /></div>
-                <div><Shoperz width={160} height={90} /></div>
+                <div><Shoperz  width={windowWidth > 405 ? 160 : 120}  /></div>
               </div>
 
               <div className='user-content'>

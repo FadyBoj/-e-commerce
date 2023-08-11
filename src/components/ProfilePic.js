@@ -58,7 +58,7 @@ const ProfilePic = () => {
                       </div>
                       }
                       { profileDropDown &&
-                      <div style={windowWidth < 605 ? {left:'-80px'}:{}} className='drop-down'>
+                      <div  className='drop-down'>
 
                         <div className='first ele'> <CgProfile size={20} /> <div>My profile</div></div>
                         <div className='ele'> <RiSettings2Line size={20} /> <div>Settings</div></div>
