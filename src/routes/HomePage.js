@@ -8,6 +8,11 @@ import TopDeals from '../components/TopDeals';
 import Footer from '../components/Footer';
 import MobileMenu from '../components/MobileMenu';
 
+import HomeSection0 from '../components/Sections/HomeSection0';
+import HomeSection1 from '../components/Sections/HomeSection1';
+import HomeSection2 from '../components/Sections/HomeSection2';
+
+
 import '../js/app.js';
 
 
@@ -55,9 +60,14 @@ export default function HomePage()
             handleMenu={handleMobileMenu}
             style={mobileMenu ? {transform:'unset'}:{transform:'translateX(-100%)'}}
             />
-            <NewHeader handleMenu={handleMobileMenu} />
+            
+            <NewHeader sticky={true} handleMenu={handleMobileMenu} />
             <Hero />
-            <TopDeals windowWidth={window.innerWidth}/><br /><br /><br />
+            <HomeSection2/>
+            <HomeSection0/>
+            <HomeSection1 />
+            <br/><br />
+           {/*<TopDeals windowWidth={window.innerWidth}/><br /><br /><br />*/}
             <Footer />
 
             </div>

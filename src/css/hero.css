@@ -6,6 +6,10 @@
     height: 350px;
 }
 
+.hero .content{
+overflow: hidden;
+}
+
 .hero .hero-img-container{
     flex-direction: row;
     flex-shrink: unset;
@@ -19,38 +23,74 @@
 {
     display: flex;
     flex-direction: column;
-    gap:10px;
+    gap:5px;
     position: absolute;
+    left: 100px;
+    top:40px;
+    font-family: poppins;
 }
+
+.hero-img .text .cols{
+    display: flex;
+    flex-direction: column;
+    gap:18px;
+}
+
+
 
  .hero-img .text .title{
     color: #091c89;
-    font-family:Outfit;
+    font-family: poppins;
     font-size: 20px;
+    width: 500px;
     opacity: 0;
     transform: translateY(30px);
     transition: all 1s;
 
 }
 
+.hero-img .text .title:first-child{
+    background-color: #1f84e362;
+    width: fit-content;
+    padding: 6px 12px 6px 12px;
+    border-radius: 9px;
+    box-shadow: 0 2px 6px 0 rgba(122, 122, 122, 0.411);
+}
+
+.hero-img .text .title:last-child{
+    margin-top: 30px;
+    color: black;
+    line-height: 22px;
+    font-family: Poppins;
+    font-size: 17px;
+}
+
  .hero-img .text .main{
-    color: black;       
-    font-family:Outfit;
+    color: #2e2e2d;       
+    font-family: poppins;
     font-size: 60px;
+    line-height: 70px;
     width: 500px;
     opacity: 0;
     transform: translateY(100px);
     transition: all 1s;
+    font-weight: 700;
+    margin-top: 57px;
+
+}
+
+.hero-img .text  span{
+    color: #1f4d09;
 
 }
 
 .shop-now{
     width: 160px;
-    height: 43px;
+    height: 49px;
     border: unset;
     color: white;
     background-color: #3e52d5;
-    border-radius: 3px;
+    border-radius: 16px;
     font-family: Outfit;
     font-size: 17px;
     display: flex;
@@ -68,29 +108,42 @@
 }
 
 .shop-now:hover{
-    background-color: #dfd8d8;
+    background-color: #fff;
     color: #3e52d5;
     
 }
 
 .hero-img{
     width: 100%;
-    height: 100%;
-    background-image: url('../images/HeroImg.webp');
-    background-position: center;
+    min-height: calc(100vh);
+    display: flex;
+    align-items: start;
+    background-image: url('../assests/eclipse.svg');
+    background-position-y: -800px;
+    background-position-x: 0px;
     background-size: cover;
     background-repeat: no-repeat;
+    justify-content: flex-end;
     position: relative;
-    display: flex;
-    align-items: center;
-    padding-left: 20px;
+    transition: all 250ms;
+
 }
+
+.landing-img{
+    width: 800px;
+    transform: translateY(-290px);
+    transform: translateX(100%);
+    transition: all 1s;
+
+}
+
 
 
 @media (max-width:1600px)
 {
     .hero .hero-img-container{
-        height: 550px;
+        height:calc(100vh - 160px)
+
 }   }
 
 @media (max-width:1020px) {

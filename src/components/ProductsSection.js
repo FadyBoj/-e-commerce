@@ -1,4 +1,9 @@
 import React from 'react';
+import Lottie from 'lottie-react';
+
+//Lottie svgs
+
+import emptyCart from '../assests/empty-cart.json';
 
 //Componenets
 
@@ -313,8 +318,8 @@ export default function Products()
                 <div className='row-2'>
                     { cartItems.length === 0 && 
                     <div className='empty-miniCart'>
-                        <img src='../images/cart.svg' className='cart--icon' />
-                        <p className='empty--phrase'>Your shopping cart is still empty, you can now fill it by adding products</p>
+                        <Lottie animationData={emptyCart}/>
+                        <p className='empty--phrase'>Your shopping cart is still empty . . .</p>
                     </div>
                     }
                     { cartItems.length > 0 &&

@@ -7,8 +7,13 @@
 }
 
 .new-header{
-    position: relative;
-    z-index: 20;
+    position: sticky;
+    z-index: 25;
+}
+
+.shop-cont{
+    display: flex;
+    justify-content: flex-start;
 }
 
 .new-header .sec-1

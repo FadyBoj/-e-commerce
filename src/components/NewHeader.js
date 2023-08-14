@@ -68,7 +68,7 @@ const NewHeader = (props) => {
     //Mobile Menu
 
   return (
-    <div className='new-header'>
+    <div style={props.sticky ? {top:'0px'}:{}} className='new-header'>
 
 
       

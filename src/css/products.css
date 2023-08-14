@@ -391,6 +391,11 @@ div{
     font-family: Ubuntu;
     display: flex;
     flex-wrap: wrap;
+    font-size: 18px;
+    line-height: 25px;
+    font-weight: bold;
+    letter-spacing: 1px;
+    
 }
 
 .miniCart--item {

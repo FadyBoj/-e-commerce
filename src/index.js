@@ -16,7 +16,7 @@ import './css/footer.css'
 import './css/products.css'
 import './css/profile.css'
 import '@fontsource/inter';
-
+import './css/homePage.css'
 
 //js
 
