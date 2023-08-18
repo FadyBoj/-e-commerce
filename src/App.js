@@ -9,6 +9,14 @@ import MyOrders from "./routes/MyOrders";
 import SignIn from "./routes/SignIn";
 import CreateAccount from "./routes/CreateAccount";
 
+//admin pages
+import Statistics from "./routes/Admin/Statistics";
+import Orders from "./routes/Admin/Orders";
+import AdminProducts from "./routes/Admin/AdminProducts";
+import Users from "./routes/Admin/Users";
+import Complaints from "./routes/Admin/Complaints";
+
+
 import {
     createBrowserRouter,
   } from "react-router-dom";
@@ -51,6 +59,26 @@ import {
       path: "/create-account",
       element: <CreateAccount />,
     },
+    //admin
+    {
+      path: "/admin/statistics",
+      element: <Statistics/>,
+    },
+    {
+      path: "/admin/orders",
+      element: <Orders/>,
+    },{
+      path: "/admin/products",
+      element: <AdminProducts/>,
+    },
+    {
+      path: "/admin/users",
+      element: <Users/>,
+    },
+    {
+      path: "/admin/complaints",
+      element: <Complaints/>,
+    }
   ]);
 
 export default router 

@@ -18,7 +18,8 @@ import './css/profile.css';
 import '@fontsource/inter';
 import './css/homePage.css';
 import './css/signIn.css';
-import './css/createAccount.css'
+import './css/createAccount.css';
+import './css/admin.css'
 //js
 
 

@@ -723,6 +723,7 @@ a{
 
 .dash-nav{
     display: flex;
+    align-items: center;
     gap:20px;
     font-family: Ubuntu;
     font-size: 16px;
