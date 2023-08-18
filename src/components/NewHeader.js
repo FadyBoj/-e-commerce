@@ -17,9 +17,14 @@ import { IoIosHeartEmpty } from 'react-icons/io'
 
 const NewHeader = (props) => {
 
+    // handle auth
+
+    const [isAuthenticated,setIsAuthenticated] = React.useState(false);
+
     const [notfication,setNotfication] = React.useState(true);
     const [windowWidth,setWindowWidth] = React.useState(window.innerWidth);
 
+    
     window.addEventListener('resize',() =>{
       setWindowWidth(window.innerWidth)
     })
@@ -93,8 +98,13 @@ const NewHeader = (props) => {
                     <VscBell size={25}/>
                   }
                 </div>
-
-                <ProfilePic/>
+                  { isAuthenticated ?
+                    <ProfilePic/>:
+                    <div className='header-sign-in'>
+                      <button className='sign-in-btn'>Sign in</button>
+                    </div>
+                    
+                  }
 
 
               </div>

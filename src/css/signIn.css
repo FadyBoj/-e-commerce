@@ -1,0 +1,222 @@
+.sign-in-section{
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-family: Poppins;
+    padding-top: 20px;
+}
+
+
+
+.sign-in-form{
+    width: 100%;
+    min-height: 30px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 40px;
+    gap:40px
+}
+
+.sign-input-cont{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap:5px;
+}
+
+
+.sign-in-form .sign-email{
+    width: 500px;
+    border: unset;
+    height: 47px;
+    outline: solid #3e52d5 2px;
+    padding-left: 20px;;
+    font-size: 15px;
+    font-family: Poppins;
+    border-radius: 2px;
+}
+
+.sign-submit-btn{
+    width: 500px;
+    height: 55px;
+    background-color: black;
+    color: white;
+    border: unset;
+    font-size: 18px;
+    font-family: Poppins;
+    border-radius: 7px;
+    cursor: pointer;
+    transition: all 250ms;
+    font-size: 20px;
+    border-radius: 100px;
+
+}
+
+.sign-submit-btn:hover{
+    transform: translateY(-2px);
+}
+
+.sign-space{
+    width: 500px;
+    background-color: rgb(156, 156, 156);
+    height: 1px;
+}
+
+.google-svg{
+    width: 23px;
+    height: 23px;
+ 
+}
+
+.google-svg-cont{
+    position: absolute;
+    left: 1px;
+    background-color: white;
+    height: 53.9px;
+    width: 53.9px;
+    padding: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 100px 100px 100px 100px;
+}
+
+.google-btn{
+    position: relative;
+    width: 500px;
+    height: 55px;
+    background-color: #4285f4;
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 250ms;
+    box-shadow: 0 1px 7px 0 #595a5b9d;
+    font-size: 17px;
+    border-radius: 100px;
+
+}
+
+.google-btn:hover{
+    box-shadow: 0 2px 7px 0 #4285f4;
+    transform: translateY(-2px);
+
+}
+
+.help,.copy-rights{
+    width: 500px;
+    text-align: center;
+    font-size: 13px;
+    margin-top: 15px;
+}
+
+.sign-main-title ,.sign-main-p{
+    text-align: center;
+}
+
+.help-cont{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.inpt-title,.error-cont
+{
+    text-align: left;
+    width: 500px;
+}
+
+.error-cont{
+    color:#ff3333;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    gap:6px;
+    display: none;
+    width: 500px;
+    font-size: 13px;
+}
+
+.error-icon{
+    transform: translateY(3px);
+}
+
+@media screen and (max-width:570px)
+{
+    .sign-in-form .sign-email{
+        margin: auto;
+        width: 100%;
+    }
+    .inpt-title{
+        width: 95%;
+    }
+
+
+
+    .sign-in-form{
+        display: flex;
+        flex-direction: column;
+    }
+
+    .sign-input-cont{
+        display: flex;
+        flex-direction: column;
+        width: 95%;
+        align-items: unset;
+        justify-content: center;
+        align-items: center;
+    }
+    .sign-input-cont div{
+        width: 100%;
+    }
+
+    .sign-input-cont .error-cont{
+        width: unset;
+        justify-content: flex-start;
+        width: 100%;
+    }
+    .sign-input-cont .error-cont div{
+        width: unset;
+    }
+    .google-btn,.sign-submit-btn{
+        width: 95%;
+    }
+
+    .help ,.copy-rights{
+        width: 95%;
+        text-align: center;
+  
+    }
+
+    @media screen and (max-width:400px) {
+            .sign-main-title{
+                font-size: 20px;
+            }
+
+            .sign-main-p{
+                font-size: 15px;
+                padding:0 10px 0 10px;
+                margin-top: 2px;
+            }
+
+            .google-btn,.sign-submit-btn{
+                height: 40px;
+            }
+            .sign-in-form .sign-email{
+                height: 40px;
+            }
+            .google-svg-cont{
+                height: 38.2px;
+                border-radius: 50%;
+                width: 38px;;
+            }
+
+
+    }
+}

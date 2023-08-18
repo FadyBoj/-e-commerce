@@ -40,7 +40,7 @@ const HomeSection0 = () => {
   const observer = new IntersectionObserver((entries)=>{
       if(entries[0].isIntersecting)
       {
-        animateText()
+        requestAnimationFrame(animateText)
         setInterSecting(true)
       }
     },{threshold:0.7})

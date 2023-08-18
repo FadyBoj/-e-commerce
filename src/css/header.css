@@ -225,6 +225,24 @@
 }
 
 
+.sign-in-btn{
+    width: 160px;
+    height: 40px;
+    border: unset;
+    border-radius: 7px;
+    font-size: 18px;
+    font-family: Poppins;
+    color: white;
+    background-color: #3e52d5;
+    transition: all 250ms;
+    cursor: pointer;
+    outline: solid 2px #3d52d7;
+}
+
+.sign-in-btn:hover{
+    color:#3d52d7;
+    background-color: #fff;
+}
 
 @media(max-width:1194px)
 {

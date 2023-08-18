@@ -10,14 +10,15 @@ import {
 //Css
 import './css/header.css';
 import './css/mobileMenu.css';
-import './css/hero.css'
-import './css/topDeals.css'
-import './css/footer.css'
-import './css/products.css'
-import './css/profile.css'
+import './css/hero.css';
+import './css/topDeals.css';
+import './css/footer.css';
+import './css/products.css';
+import './css/profile.css';
 import '@fontsource/inter';
-import './css/homePage.css'
-
+import './css/homePage.css';
+import './css/signIn.css';
+import './css/createAccount.css'
 //js
 
 

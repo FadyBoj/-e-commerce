@@ -5,8 +5,10 @@ import Products from "./routes/Products";
 import PersonalInfoPage from "./routes/PersonalInfoPage";
 import MyAddress from "./routes/MyAddress";
 import NewAddress from "./routes/NewAddress";
-import MyOrders
- from "./routes/MyOrders";
+import MyOrders from "./routes/MyOrders";
+import SignIn from "./routes/SignIn";
+import CreateAccount from "./routes/CreateAccount";
+
 import {
     createBrowserRouter,
   } from "react-router-dom";
@@ -40,6 +42,14 @@ import {
     {
       path: "/profile/my-payments",
       element: <div>payments</div>,
+    },
+    {
+      path: "/sign-in",
+      element: <SignIn />,
+    },
+    {
+      path: "/create-account",
+      element: <CreateAccount />,
     },
   ]);
 
