@@ -4,6 +4,7 @@ import React from 'react'
 import Header from '../../components/profile/DashBoardHeader';
 import AdminDashboard from '../../components/AdminDashboard';
 import LineChart from '../../components/charts/LineChart';
+import BarChart from '../../components/charts/BarChart';
 import * as echarts from 'echarts';
 
 
@@ -105,12 +106,23 @@ const Statistics = () => {
               </div>
 
               <div className='grid-2 grid'>
+
                 <div className='line-chart-cont'>
                   <LineChart />
                 </div>
+
               </div>
 
             </div>
+            <div className='grid-3'>
+              <div className='bar-chart-cont'>
+                      <BarChart/>
+              </div>
+            </div>
+        </div>
+
+        <div>
+          
         </div>
         
     </div>
