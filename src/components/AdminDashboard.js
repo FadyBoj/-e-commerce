@@ -14,7 +14,7 @@ import { BiCommentError } from 'react-icons/bi';
 
 const AdminDashboard = (props) => {
   return (
-    <div className='admin-dashboard'>
+    <div ref={props.refs} className='admin-dashboard'>
         <div>
           <Shoperz width={140}/>
         </div>

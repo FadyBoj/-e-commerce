@@ -2,8 +2,8 @@ import React from 'react'
 import * as echarts from 'echarts';
 
 const LineChart = () => {
-  const monthNames = ["January", "February", "March", "April", "May", "June",
-  "July", "August", "September", "October", "November", "December"];
+  const monthNames = ["Jan", "Feb", "Mar", "Apr", "May", "Jun",
+  "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
   
   const alternative = {
      "-1":11,
@@ -36,9 +36,9 @@ const LineChart = () => {
      }
   }
   
-  console.log(latestMonths.reverse())
 
     const lineChartRef = React.useRef();
+    
 
     React.useEffect(() =>{
         const myChart = echarts.init(lineChartRef.current, null, {
@@ -48,7 +48,8 @@ const LineChart = () => {
             option = {
                 color: ['#80FFA5', '#00DDFF', '#37A2FF', '#FF0087', '#FFBF00'],
                 title: {
-                  text: 'Total Revenue'
+                  text: 'Total Revenue',
+                  color:'#000'
                 },
                 tooltip: {
                   trigger: 'axis',
@@ -123,7 +124,6 @@ const LineChart = () => {
               
               option && myChart.setOption(option);
     })
-
 
   return (
     <div className='line-chart' ref={lineChartRef}>

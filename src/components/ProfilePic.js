@@ -47,7 +47,7 @@ const ProfilePic = () => {
     <div ref={dropDownRef} onClick={()=>{handleDropDown()}} className='profile-pic-container'> 
                   <div className='content'>
                       <div className='pfp' style={{backgroundImage:`url(${require('../images/John-wick.jpg')})`}}></div>
-                      { windowWidth > 605 &&
+                      { windowWidth > 653 &&
                       <div className='render-size'>
                         <div className='name'>
                           <p>John wick</p>

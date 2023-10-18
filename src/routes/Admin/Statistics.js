@@ -7,8 +7,35 @@ import LineChart from '../../components/charts/LineChart';
 import BarChart from '../../components/charts/BarChart';
 import * as echarts from 'echarts';
 
+//Icons
+import { GiHamburgerMenu } from 'react-icons/gi';
+import { RxDashboard } from 'react-icons/rx';
 
 const Statistics = () => {
+  const dashboardRef = React.useRef();
+
+  const [windowChanged,setwindowChanged] = React.useState(false);
+  const [windowWidth,setwindowWidth] = React.useState(window.innerWidth);
+
+    
+  React.useEffect(()=>{
+    const handleResize = ()=>{
+      setwindowChanged(prevValue => !prevValue);
+      setwindowWidth(window.innerWidth);
+      if(window.innerWidth < 1317)  
+      {
+        dashboardRef.current.classList.remove('show-adminDashboard');
+        setVisibleDashboard(false)
+      }
+    }
+
+    window.addEventListener('resize',handleResize);
+
+    return () =>{
+      window.removeEventListener('resize',handleResize);
+    }
+
+  })
 
   const pieData = [
     { value: 200, name: 'Beverages',itemStyle:{color:'#3d52d7'}},
@@ -27,7 +54,6 @@ const Statistics = () => {
     return ((item.value / pieTotalValue) * 100 || 0).toFixed(2);
   })
 
-  console.log(piePercentage)
  
   const pieRef = React.useRef();
   
@@ -81,50 +107,108 @@ const Statistics = () => {
     option && myChart.setOption(option);
   })
  
+  //handle admin dashboard
+  const [visivleDashboard,setVisibleDashboard] = React.useState(false);
+
+
+  const showDashBoard = ()=>{
+    setTimeout(()=>{
+      setVisibleDashboard(true)
+      dashboardRef.current.classList.add('show-adminDashboard');
+    },1)
+  }
+
+
+  React.useEffect(()=>{
+    const handleClickOutside = (e)=>{
+      if(dashboardRef.current && !dashboardRef.current.contains(e.target))
+      {
+        dashboardRef.current.classList.remove('show-adminDashboard');
+        setVisibleDashboard(false)
+
+      }
+    }
+
+    document.addEventListener('click',handleClickOutside);
+
+    return() =>{
+      document.removeEventListener('click',handleClickOutside)
+    }
+
+  })
+
+  React.useEffect(() =>{
+    if(visivleDashboard)
+    {
+      document.body.classList.add('noScroll')
+    }
+    else{
+      document.body.classList.remove('noScroll')
+
+    }
+  },[visivleDashboard])
 
   return (
-    <div className='statistics'>
+    <div style={{position:'relative'}} >
+      <div className='statistics'>
+        { visivleDashboard &&
+          <div className='handleBrightness'>
+          </div>
+        }
+          
 
-        <div className='half-1'>
-            <AdminDashboard id={1} />
-        </div>
+          <div className='half-1'>
+              <AdminDashboard   refs={dashboardRef} id={1} />
+          </div>
 
-        <div className='half-2'>
-            <Header/>
-            <div className='statistics-grid'>
+          <div className='half-2'>
+              <Header/>
+              { windowWidth  < 1317 &&
+              <div 
+              className='menu-icon-container'
+              onClick={()=>{showDashBoard()}}
+              >
+                <RxDashboard size={24} /></div>
+              }
+              <div className='statistics-grid'>
 
-              <div className='grid-1 grid'>
-                <div className='pie'>
-                  <div className='title'>Best selling products</div>
-                  <div ref={pieRef} className='pieElement'></div>
-                  <div className='legends'>
-                    <div><p className='leg-title'>Beverages</p><p>{piePercentage[0]}%</p></div>
-                    <div><p className='leg-title'>Sweets</p><p>{piePercentage[1]}%</p></div>
-                    <div><p className='leg-title'>Fishes</p><p>{piePercentage[2]}%</p></div>
+                <div className='grid-1 grid'>
+                  <div className='pie'>
+                    <div className='title'>Best selling products</div>
+                    {windowChanged ?<div ref={pieRef} className='pieElement'></div>:'' }
+                    {!windowChanged ?<div ref={pieRef} className='pieElement'></div>:'' }
+                    
+                    <div className='legends'>
+                      <div><p className='leg-title'>Beverages</p><p>{piePercentage[0]}%</p></div>
+                      <div><p className='leg-title'>Sweets</p><p>{piePercentage[1]}%</p></div>
+                      <div><p className='leg-title'>Fishes</p><p>{piePercentage[2]}%</p></div>
+                    </div>
                   </div>
                 </div>
-              </div>
 
-              <div className='grid-2 grid'>
+                <div className='grid-2 grid'>
 
-                <div className='line-chart-cont'>
-                  <LineChart />
+                  <div className='line-chart-cont'>
+                    { windowChanged ? <LineChart  />:''}
+                    { !windowChanged ? <LineChart  />:''}
+                  </div>
+
                 </div>
 
               </div>
-
-            </div>
-            <div className='grid-3'>
-              <div className='bar-chart-cont'>
-                      <BarChart/>
+              <div className='grid-3'>
+                <div className='bar-chart-cont'>
+                    { windowChanged ? <BarChart />:''}
+                    { !windowChanged ? <BarChart />:''}
+                </div>
               </div>
-            </div>
-        </div>
+          </div>
 
-        <div>
+          <div>
+            
+          </div>
           
-        </div>
-        
+      </div>
     </div>
   )
 }

@@ -81,8 +81,10 @@ const ProfileDashboard = (props) => {
 
   return (
     <div className='profile-dashboard'>
-      <div className='logo'><ShoperzSvg width={200} height={100} /></div>
+      <div className='logo'><ShoperzSvg width={140}  /></div>
+      <div style={{marginTop:'50px',display:'flex',flexDirection:'column',gap:'30px'}}>
         {dashboardElemetns}
+      </div>
         
     </div>
   )

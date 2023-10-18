@@ -9,23 +9,37 @@ import { AiOutlineSearch } from 'react-icons/ai';
 import { AiTwotoneThunderbolt } from 'react-icons/ai';
 import { VscBell } from 'react-icons/vsc';
 import NotfiDot from '../made-icons/NotfiDot';
+import { GiHamburgerMenu } from 'react-icons/gi';
 
+//Icons
+import Shoperz from '../../components/shoperz'
 
 const DashBoardHeader = () => {
 
   const [notfication,setNotfication] = React.useState(true);
-  
+  const [windowWidth,setwindowWidth] = React.useState(window.innerWidth);
+
+    
+  React.useEffect(()=>{
+    const handleResize = ()=>{
+      setwindowWidth(window.innerWidth);
+    }
+
+    window.addEventListener('resize',handleResize);
+
+    return () =>{
+      window.removeEventListener('resize',handleResize);
+    }
+
+  })
 
   return (
 
 
       <div className='dashboard-header'>
 
-          <form className='dash-search-container'>
-              <div className='dash-search-icon' type="submit"><AiOutlineSearch/></div>
-              <div><input placeholder='Search' className='dash-input' type='text' /></div>
-          </form>
-
+          
+          <Shoperz width={130} height={130} />
 
           <div className='dash-nav'>
             <div>Home</div>
@@ -39,13 +53,8 @@ const DashBoardHeader = () => {
 
           <div className='user-content'>
 
-          <div className='points'>
-              <div><AiTwotoneThunderbolt className='thunder-icon' size={20} fill='#7dbe54'/></div>
-              <div>40</div>
-            </div>
 
-           
-
+          { windowWidth > 1057 &&
             <div className='notfication'>
               {
                 notfication ? 
@@ -53,8 +62,17 @@ const DashBoardHeader = () => {
                 <VscBell size={25}/>
               }
             </div>
+          }
 
+            { windowWidth > 1057 &&
             <ProfilePic/>
+            }
+
+            { windowWidth < 1057 &&
+              <div className='dash-menu-cont'>
+              <GiHamburgerMenu size={25}/>
+            </div>
+            }
 
     
           </div>
