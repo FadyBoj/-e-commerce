@@ -1,5 +1,7 @@
 
-
+html {
+    overflow-y: scroll;
+}
 .personal-info{
     display: flex;
     flex-direction: row;

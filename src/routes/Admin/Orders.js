@@ -6,8 +6,8 @@ import AdminDashboard from '../../components/AdminDashboard';
 
 //Icons
 import { RxDashboard } from 'react-icons/rx';
-
-
+import { BiSolidDownArrow } from 'react-icons/bi'
+ 
 const Orders = () => {
 
   const dashboardRef = React.useRef();
@@ -36,6 +36,13 @@ const Orders = () => {
   })
 
   const [visivleDashboard,setVisibleDashboard] = React.useState(false);
+  const [visibleStatusDropDown,setVisibleStatusDropDown] = React.useState(false);
+
+  //Refs
+
+  const orderDropDownRef = React.useRef();
+  const statusFilterContainerRef = React.useRef();
+  const statusFilterRef = React.useRef();
 
 
   const showDashBoard = ()=>{
@@ -75,6 +82,32 @@ const Orders = () => {
   },[visivleDashboard])
 
 
+  const handleOrdersDropDown = () =>{
+
+    setVisibleStatusDropDown(prev => !prev)
+
+  }
+
+  React.useEffect(() =>{
+    const handleClickOutSide = (e) =>{
+      if( orderDropDownRef.current && orderDropDownRef.current.classList.contains('goDown') && e.target.contains(statusFilterContainerRef.current))
+      {
+        orderDropDownRef.current.classList.remove('goDown')
+        setVisibleStatusDropDown(false)
+      }
+    }
+
+    document.addEventListener('click',handleClickOutSide);
+
+    return () =>{
+      document.removeEventListener('click',handleClickOutSide)
+    }
+
+  })
+
+
+
+
   return (
     <div className='statistics'>
 
@@ -91,6 +124,62 @@ const Orders = () => {
               >
                 <RxDashboard size={24} /></div>
               }
+              
+
+              <div className='orders-details-container'>
+
+                <div className='orders-api'>
+                  <div className='section-1'>
+
+                    <h1>Orders</h1>
+
+                    <div ref={statusFilterContainerRef} onClick={handleOrdersDropDown} className='status-filter-container'>
+
+                      <div 
+                      ref={statusFilterRef}
+                      className='status-filter'
+                      onMouseDown={()=>{
+                        statusFilterRef.current.classList.add('element-clicked')
+                      }}
+                      onMouseUp={()=>{
+                        statusFilterRef.current.classList.remove('element-clicked')
+                      }}
+                      onMouseLeave={()=>{
+                        statusFilterRef.current.classList.remove('element-clicked')
+
+                      }}
+                      >
+                        <div>Status: </div>
+                        <div className='orders-arrow'
+                        style={visibleStatusDropDown ? {transform:'translateY(-2px)rotate(180deg)'}:{}} 
+                        > 
+                        <BiSolidDownArrow
+                        
+                        fill='#616161' /> 
+                        </div>
+                      </div>
+                        <div  
+                        ref={orderDropDownRef}
+                        className={`order-filter-dropdown ${visibleStatusDropDown ? 'goDown': 'goUp'}`}
+                        >
+                      </div>
+                     
+                    </div>
+
+                     <div className='date-filter'>
+                      <div>Date: </div>
+                      <div className='orders-arrow'> <BiSolidDownArrow  fill='#616161' /> </div>
+                    </div>
+
+                  </div>
+                </div>
+
+                <div className='orders-details'>
+
+                </div>
+
+              </div>
+
         </div>
         
     </div>
