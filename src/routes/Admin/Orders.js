@@ -3,10 +3,15 @@ import React from 'react'
 //Components
 import Header from '../../components/profile/DashBoardHeader';
 import AdminDashboard from '../../components/AdminDashboard';
+import Order from '../../components/Order';
 
 //Icons
 import { RxDashboard } from 'react-icons/rx';
-import { BiSolidDownArrow } from 'react-icons/bi'
+import { BiSolidDownArrow } from 'react-icons/bi';
+
+//Dummies
+import orderDummy from '../../orders-dummy.json';
+
  
 const Orders = () => {
 
@@ -14,6 +19,29 @@ const Orders = () => {
 
   const [windowChanged,setwindowChanged] = React.useState(false);
   const [windowWidth,setwindowWidth] = React.useState(window.innerWidth);
+  const [statusFilter,setStatusFilter] = React.useState('all')
+  const [orders,setOrders] = React.useState({incomplete:[],pending:[],completed:[]});
+
+  console.log(orders)
+
+  React.useEffect(() =>{
+    const temp = ['incomplete','pending','completed'];
+    let data = {}
+    for(let i = 0; i <= 2; i++)
+    {
+      let obj = []
+      orderDummy.map((item) =>{
+        if(item.status === temp[i])
+        {
+          obj.push(item)
+        }
+      })
+      data[temp[i]] = obj
+    }
+
+    setOrders(data)
+
+  },[0])
 
 
   React.useEffect(()=>{
@@ -90,11 +118,12 @@ const Orders = () => {
 
   React.useEffect(() =>{
     const handleClickOutSide = (e) =>{
-      if( orderDropDownRef.current && orderDropDownRef.current.classList.contains('goDown') && e.target.contains(statusFilterContainerRef.current))
-      {
-        orderDropDownRef.current.classList.remove('goDown')
-        setVisibleStatusDropDown(false)
-      }
+     if(orderDropDownRef.current && orderDropDownRef.current.classList.contains('goDown') && !orderDropDownRef.current.contains(e.target))
+     {
+      orderDropDownRef.current.classList.remove('goDown')
+      setVisibleStatusDropDown(false)
+     }
+      
     }
 
     document.addEventListener('click',handleClickOutSide);
@@ -133,11 +162,12 @@ const Orders = () => {
 
                     <h1>Orders</h1>
 
-                    <div ref={statusFilterContainerRef} onClick={handleOrdersDropDown} className='status-filter-container'>
+                    <div ref={statusFilterContainerRef}  className='status-filter-container'>
 
                       <div 
                       ref={statusFilterRef}
                       className='status-filter'
+                      onClick={handleOrdersDropDown}
                       onMouseDown={()=>{
                         statusFilterRef.current.classList.add('element-clicked')
                       }}
@@ -149,9 +179,9 @@ const Orders = () => {
 
                       }}
                       >
-                        <div>Status: </div>
+                        <div>Status : All </div>
                         <div className='orders-arrow'
-                        style={visibleStatusDropDown ? {transform:'translateY(-2px)rotate(180deg)'}:{}} 
+                        style={visibleStatusDropDown ? {transform:'translateY(-1px)rotate(180deg)'}:{}} 
                         > 
                         <BiSolidDownArrow
                         
@@ -166,12 +196,45 @@ const Orders = () => {
                      
                     </div>
 
-                     <div className='date-filter'>
-                      <div>Date: </div>
-                      <div className='orders-arrow'> <BiSolidDownArrow  fill='#616161' /> </div>
+                    <div className='orders-quick-search'>
+                        <input  
+                        type='text'
+                        placeholder='Quick search'
+                        className='quick-search-inpt'
+                         />
                     </div>
 
                   </div>
+
+                  { ((statusFilter === 'all' || statusFilter === 'incomplete') && orders?.incomplete.length > 0 ) &&
+                     <div className='action-required'>
+                        <div className='action-title'>ACTIONS REQUIRED</div>
+                        {
+                          orders?.incomplete.map((item) =>{
+                            return <Order 
+                                    clientName={item.clientName}
+                                    clientID={item.clientID}
+                                    time={item.createdAt}
+                                    price={item.price}
+                                    paymentType={item.paymentType}
+                                    address={item.address}
+                                   />
+                          })
+                        }
+                     </div>  
+                  }
+               
+
+      
+
+                  <br />
+
+                  <div className='action-required'>
+                    <div className='action-title-2'>IN PROGRESS</div>
+                      <Order/>
+                      <Order/>
+                  </div>
+
                 </div>
 
                 <div className='orders-details'>
